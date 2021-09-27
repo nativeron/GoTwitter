@@ -16,7 +16,7 @@ func GetAllTweets(ID string, pag int64) ([]*models.ReturnTweets, bool) {
 	defer cancel()
 
 	db := MongoCN.Database("tw")
-	col := db.Collection("tweeet")
+	col := db.Collection("tweet")
 
 	var result []*models.ReturnTweets
 
