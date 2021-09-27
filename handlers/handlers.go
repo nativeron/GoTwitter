@@ -29,6 +29,8 @@ func Handlers() {
 	router.HandleFunc("/getavatar", middlew.CheckDB(middlew.ValidateJWT(routers.GetAvatar))).Methods("GET")
 	router.HandleFunc("/getbanner", middlew.CheckDB(middlew.ValidateJWT(routers.GetBanner))).Methods("GET")
 
+	router.HandleFunc("/rel", middlew.CheckDB(middlew.ValidateJWT(routers.Rel))).Methods("POST")
+
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
 		PORT = "8080"
